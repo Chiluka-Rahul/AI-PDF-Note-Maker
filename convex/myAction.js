@@ -8,7 +8,7 @@ import { v } from "convex/values";
 
 const apiKey = process.env.GOOGLE_API_KEY
 
-console.log("apiKey",apiKey, process.env.NEXT_PUBLIC_GEMINI_API_KEY);
+console.log("apiKey",apiKey, process.env.NEXT_PUBLIC_GEMINI_API_KEY,process.env.GOOGLE_API_KEY);
 
 
 

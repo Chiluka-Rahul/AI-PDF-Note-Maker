@@ -21,20 +21,11 @@ export default function RootLayout({ children }) {
         <body
           className={`${inter.className}`}
         >
-          <div  className="container hidden">
-            <div className="flex items-center justify-center h-screen">
-              <h1 className="text-4xl">Laptop View only :)</h1>
-            </div>
-          </div>
-          <div className="body-container">
             <Provider>
               {children}
             </Provider>
             <Toaster />
-
-          </div>
         </body>
-
       </html>
     </ClerkProvider>
   );
