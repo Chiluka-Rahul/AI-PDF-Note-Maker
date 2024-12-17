@@ -15,7 +15,6 @@ const TextEditor = ({fileId}) => {
         fileId:fileId
     })
 
-    console.log(notes);
     
     const editor = useEditor({
         extensions: [StarterKit,

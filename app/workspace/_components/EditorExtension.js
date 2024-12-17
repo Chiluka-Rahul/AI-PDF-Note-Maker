@@ -38,10 +38,23 @@ const EditorExtension = ({editor}) => {
 
         const AiModelRes = await chatSession.sendMessage(PROMPT);
 
-        console.log(AiModelRes.response.text())
-        const FinalAns = AiModelRes.response.text().replace('```','').replace('html','').replace('```','')
+        // console.log(AiModelRes.response.text())
+        // const FinalAns = AiModelRes.response.text().replace('```','').replace('html','').replace('```','')
+        // const AllText = editor.getHTML();
+        // editor.commands.setContent(AllText+'<p> <strong>Answer: </strong>'+FinalAns+' </p>');
+
+        const rawResponse = await AiModelRes.response.text();
+        console.log("AI Raw Response:", rawResponse);
+    
+        // Clean and sanitize the response
+        const sanitizedResponse = rawResponse
+            .replace(/```|html/g, '') // Remove unnecessary formatting
+            .trim();
+    
+        // Append the AI response to the editor
         const AllText = editor.getHTML();
-        editor.commands.setContent(AllText+'<p> <strong>Answer: </strong>'+FinalAns+' </p>');
+        editor.commands.setContent(AllText + `<p><strong>Answer:</strong> ${sanitizedResponse}</p>`);
+    
 
 
         saveNotes({

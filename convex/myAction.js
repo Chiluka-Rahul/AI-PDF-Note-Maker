@@ -5,6 +5,13 @@ import { GoogleGenerativeAIEmbeddings } from "@langchain/google-genai";
 import { TaskType } from "@google/generative-ai";
 import { v } from "convex/values";
 
+
+const apiKey = process.env.GOOGLE_API_KEY
+
+console.log("apiKey",apiKey, process.env.NEXT_PUBLIC_GEMINI_API_KEY);
+
+
+
 export const ingest = action({
   args: {
     splitText: v.any(),
