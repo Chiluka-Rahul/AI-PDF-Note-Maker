@@ -36,7 +36,7 @@ yarn-error.log*
 .env.local
 
 
-configs/convex/myAction.js
+convex/myAction.js
 # vercel
 .vercel
 
