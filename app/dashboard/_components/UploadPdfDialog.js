@@ -45,7 +45,7 @@ const UploadPdfDialog = ({children, isMaxFile}) => {
             body: file,
           });
         const { storageId } = await result.json();
-        console.log("st",storageId);
+        // console.log("st",storageId);
 
         const fileId =  uuid4();
         const fileUrl = await getFileUrl({storageId:storageId})
@@ -56,10 +56,10 @@ const UploadPdfDialog = ({children, isMaxFile}) => {
             fileUrl:fileUrl,
             createdBy: user?.primaryEmailAddress?.emailAddress,
         })
-        console.log("resp",resp);
+        // console.log("resp",resp);
 
         const ApiResp = await axios.get('/api/pdf-loader?pdfUrl=' + fileUrl);
-        console.log(ApiResp.data.result);
+        // console.log(ApiResp.data.result);
         await embeddDocument({
             splitText:ApiResp.data.result,
             fileId:fileId

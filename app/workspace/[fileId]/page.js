@@ -14,10 +14,10 @@ const Workspace = () => {
         {fileId:fileId}
     )
 
-    useEffect(() => {
-        console.log("fileInfo",fileInfo);
+    // useEffect(() => {
+    //     console.log("fileInfo",fileInfo);
         
-    }, [fileInfo])
+    // }, [fileInfo])
     
    
   return (

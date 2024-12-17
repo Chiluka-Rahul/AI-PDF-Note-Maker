@@ -12,7 +12,7 @@ const Dashboard = () => {
     userEmail: user?.primaryEmailAddress?.emailAddress
   })
 
-  console.log(fileList);
+  // console.log(fileList);
   
   return (
     <div className='flex flex-col justify-start items-start'>

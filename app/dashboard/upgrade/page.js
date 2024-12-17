@@ -12,7 +12,7 @@ const UpgradePlans = () => {
   const {user} = useUser();
   const onPaymentSuccess=async()=>{
     const result = await userUpgradePlan({userEmail:user?.primaryEmailAddress?.emailAddress})
-    console.log(result)
+    // console.log(result)
     toast('Plan upgraded successfully')
     
     

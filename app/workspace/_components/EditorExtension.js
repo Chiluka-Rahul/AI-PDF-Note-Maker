@@ -20,7 +20,7 @@ const EditorExtension = ({editor}) => {
             editor.state.selection.to,
             ' '
         );
-        console.log("selectedText",selectedText);
+        // console.log("selectedText",selectedText);
         const result = await SearchAI(
             {
                 query : selectedText,
@@ -48,7 +48,7 @@ const EditorExtension = ({editor}) => {
     
         // Clean and sanitize the response
         const sanitizedResponse = rawResponse
-            .replace(/```|html/g, '') // Remove unnecessary formatting
+            .replace(/```|html/g, '')
             .trim();
     
         // Append the AI response to the editor
